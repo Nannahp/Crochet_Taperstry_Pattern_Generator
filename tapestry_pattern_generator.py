@@ -66,13 +66,15 @@ def get_size():
             print("Invalid input! Please enter 2 whole numbers")
 
 
-
-def run_program():
+def calculate_variables():
     num_colors = get_num_colours()
     size  = get_size()
     pattern = generate_pattern(size[0], size[1], num_colors)
     colour_map = create_colour_map(num_colors)
-   
+    return num_colors, size, pattern, colour_map
+
+def run_program():
+    num_colors, size, pattern, colour_map = calculate_variables()
     print("Welcomce to Crochet Tapestry Generator!")
     print(f"Here is your {size} pattern:" )
     print_pattern(pattern, colour_map)
